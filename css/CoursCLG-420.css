@@ -1,0 +1,49 @@
+:root {
+    --duration: 0.75s;
+    --detailsPadding: 25px;
+    interpolate-size: allow-keywords;
+}
+
+summary {
+    cursor: pointer;
+    background-color: lightgrey;
+    width: 600px;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    &::marker {
+        font-size: 1.0em;
+    }
+}
+
+details {
+    div {
+        color: black;
+        margin-bottom: 10px;
+    }
+
+    span {
+        font-size: 18px;
+        font-family: monospace;
+        margin-bottom: 10px;
+        color : blue;
+        font-weight: bold;
+    }
+
+    &::details-content {
+        opacity: 0;
+        block-size: 0;
+        overflow-y: clip;
+        transition:
+            /* paramètres de l'animation */
+            content-visibility var(--duration) allow-discrete,
+            opacity var(--duration),
+            block-size var(--duration);
+    }
+
+    &[open]::details-content {
+        opacity: 1;
+        block-size: auto;
+    }
+}

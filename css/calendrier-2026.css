@@ -1,0 +1,64 @@
+.calendrier {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    justify-items: center;
+}
+
+@media (max-width: 1100px) {
+    .calendrier {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .calendrier {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .calendrier {
+        grid-template-columns: 1fr;
+    }
+}
+
+.mois {
+    border: 1px solid #aaa;
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    box-sizing: border-box;
+}
+
+.mois h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.jours-semaine {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+
+.grille-jours {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 2px;
+    text-align: center;
+}
+
+.grille-jours div {
+    border: grey solid 1px;
+    padding: 5px;
+}
+.ferie {
+    font-weight: bold;
+    color: red;
+    cursor: pointer; 
+    position: relative; 
+}
